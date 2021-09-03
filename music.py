@@ -44,10 +44,15 @@ class music(commands.Cog):
 	@commands.command()
 	async def pause(self, ctx):
 		await ctx.voice_client.pause()
+		await ctx.send("paused the bot")
 		
 	@commands.command()
 	async def resume(self, ctx):
 		await ctx.voice_client.resume()
+		
+	@commands.command()
+	async def stop(self, ctx):
+		await ctx.voice_client.stop()
 
 def setup(client):
 	client.add_cog(music(client))
